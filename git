@@ -2,3 +2,39 @@
 1在Git上新建一个库之后复制他给ssh
 然后回到Mac上的iterm输入命令行Git
 之后再输入Git clone然后粘贴刚才复制的ssh密钥就可以将新建的库克隆岛电脑上;
+
+git cat-file 命令显示版本库对象的内容、类型及大小信息。
+创建文件：
+先进入到你想要进入的文件夹中在文件夹里输入命令并命名
+git touch file1 file2 file3 (xxx)
+接着可以修改文件，用vim就行。并且用Git status查看当前仓库的状态，是否提交了是否加入缓存区了......
+
+关于分支：
+git branch   可以查看当前的分支列表以及目前的开发环境在那个分支上
+git checkout 分支名可以切换到其他的分支。
+在Git上删除文件：
+通过git的方式删除
+
+首先我们将整个仓库clone到本地
+git clone https://github.com/***
+在clone下来的本地仓库里初始化
+git init
+
+选择删除文件或者文件夹
+git rm FILE删除文件
+git rm -r ***删除文件夹
+
+当然这里也可以有对应的增加操作（具体参考另一篇博客）
+
+
+提交上述操作
+git commit -m "log message"
+
+推送所有文件到远程仓库
+git push origin master
+
+这时候如果再执行添加origin操作，会提示远程origin已经存在。
+细心的可能会发现这地方跟添加本地项目到github的最后一步操作不一样，那里是git push -u origin master
+
+第一次添加远程origin时，需要语句-u
+
